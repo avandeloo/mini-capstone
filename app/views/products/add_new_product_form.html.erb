@@ -1,0 +1,21 @@
+<%= form_tag "/add_product_result_url", method: :post do %>
+<!-- <form action="/form_result_url" method="post"> -->
+  <div>
+    Name: <input type="text" name="name">
+  </div>
+  <div>
+    Price: <input type="integer" name="price">
+  </div>
+  <div>
+    Image: <input type="text" name="image">
+  </div>
+  <div>
+    Description: <input type="text" name="description">
+  </div>
+  <div>
+    Release Date: <input type="text" name="release_date">
+  </div>
+  <input type="submit" value="Submit">
+
+<!-- </form> -->
+<% end %>
