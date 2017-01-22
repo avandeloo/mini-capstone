@@ -3,6 +3,8 @@ h1 {
   background-color: black;
   text-align: center;
   color: limegreen;
+  margin-left: 450px;
+  margin-right: 450px;
 }
 
 h2 {
@@ -10,6 +12,8 @@ h2 {
   background-color: black;
   color: limegreen;
   text-align: center;
+  margin-left: 450px;
+  margin-right: 450px;
 
 }
 
@@ -18,10 +22,25 @@ h3 {
   background-color: black;
   color: limegreen;
   text-align: center;
-
+  margin-left: 450px;
+  margin-right: 450px;
 }
+
+h4 {
+  border: solid;
+  background-color: black;
+  color: limegreen;
+  text-align: center;
+  margin-left: 450px;
+  margin-right: 450px;
+}
+
+body {
+  background-color: red;
+  }
 
 .images  {
   text-align: center;
+  size: auto;
 
 }

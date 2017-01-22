@@ -5,4 +5,8 @@
 <h3><%= @product.release_date %></h3>
 
 <a href="/products">Home</a>
-<a href="/products/<%= @product.id %>/edit">Edit Product</a>
+<div></div>
+<a class="btn btn-info" href="/products/<%= @product.id %>/edit">Edit Product</a>
+<%= form_tag "/products/#{@product.id}", method: :delete do %>
+  <input class="btn btn-danger" type="submit" value="delete product">
+<% end %>
