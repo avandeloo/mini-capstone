@@ -69,9 +69,9 @@ $dropDown       : true;
 
 h1 {
   border: solid;
-  background-color: rgb(202, 211, 194);
+  background-color: black;
   text-align: center;
-  color: black;
+  color: limegreen;
   margin-left: 450px;
   margin-right: 450px;
   box-shadow: 4px 4px 12px limegreen;
@@ -79,8 +79,8 @@ h1 {
 
 h2 {
   border: solid;
-  background-color: rgb(202, 211, 194);
-  color: black;
+  background-color: black;
+  color: limegreen;
   text-align: center;
   box-shadow: 4px 4px 12px limegreen;
 
@@ -88,18 +88,22 @@ h2 {
 
 h3 {
   border: solid;
-  background-color: rgb(202, 211, 194);
-  color: black;
+  background-color: black;
+  color: limegreen;
   text-align: center;
   box-shadow: 4px 4px 12px limegreen;
 }
 
 h4 {
   border: solid;
-  background-color: rgb(202, 211, 194);
-  color: black;
+  background-color: black;
+  color: limegreen;
   text-align: center;
   box-shadow: 4px 4px 12px limegreen;
+}
+
+.price {
+  color: red;
 }
 
 body {
@@ -111,4 +115,53 @@ body {
 .well img {
   width: 100%;
 
+}
+
+.well{
+  height: auto;
+  background-color: black;
+  border-color: black;
+}
+
+.well2{
+  width: 400px;
+  margin: auto;
+  height: 280px;
+  background-color: black;
+  border-color: black;
+}
+
+.well3{
+  width: 400px;
+  margin: auto;
+  border-color: black;
+}
+
+.link {
+  color: limegreen;
+}
+
+.label {
+  color: limegreen;
+}
+
+.container {
+    width: 350px;
+    clear: both;
+}
+
+.container input {
+    width: 100%;
+    clear: both;
+}
+
+.images {
+  margin: auto;
+  text-align: center;   
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 4px 4px 12px limegreen;
 }

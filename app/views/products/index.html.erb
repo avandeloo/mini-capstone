@@ -1,16 +1,17 @@
 <div class="row">
 
 <% @products.each_slice(3) do |product_slice| %>
-<% @products.each do |product| %>
-  <div class="col-md-4">
-    <div class="well">
-      <h2><a href="/products/<%= product.id %>"><%= product.name %></a></h2>
-      <h4>Price: <%= product.price - 1 %>.99</h4>
-      <div class="images" ><img src=<%= product.image%>></div>
-      <h3>Description: <%= product.description %></h3>
-      <h3>Release Date: <%= product.release_date %></h3>
+  <% product_slice.each do |product| %>
+    <div class="col-md-4">
+      <div class="well">
+        <h2><a href="/products/<%= product.id %>" class = link><%= product.name %></a></h2>
+        <h4>Price: <%= product.price%>.00</h4>
+        <div class="images" ><img src=<%= product.image%>></div>
+        <h3>Description: <%= product.description %></h3>
+        <h3>Release Date: <%= product.release_date %></h3>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
 
 </div>

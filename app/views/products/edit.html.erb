@@ -1,22 +1,28 @@
 <h1>Update Product</h1>
 
-<%= form_tag "/products/#{@product.id}", method: :patch do %>
+<div class="well2">
+  <div class="container">
+    <%= form_tag "/products/#{@product.id}", method: :patch do %>
+      
+      <div>
+        <label class ="label">Name: </label><input type="text" name="name" value="<%= @product.name %>">
+      </div>
+      <div>
+        <label class ="label">Price: </label><input type="integer" name="price" value="<%= @product.price %>">
+      </div>
+      <div>
+        <label class ="label"> Image Link: </label><input type="text" name="image" value="<%= @product.image %>">
+      </div>
+      <div>
+        <label class ="label"> Description: </label><input type="text" name="description" value="<%= @product.description %>">
+      </div>
+      <div>
+        <label class ="label">Release Date: </label><input type="text" name="release_date" value="<%= @product.release_date %>">
+      </div>
+      <p></p>
+      <input type="submit" name="Update Product">
 
-  <div>
-    Name: <input type="text" name="name" value="<%= @product.name %>">
+    <% end %>
   </div>
-  <div>
-    Price: <input type="integer" name="price" value="<%= @product.price %>">
-  </div>
-  <div>
-    Image Link: <input type="text" name="image" value="<%= @product.image %>">
-  </div>
-  <div>
-    Description: <input type="text" name="description" value="<%= @product.description %>">
-  </div>
-  <div>
-    Release Date: <input type="text" name="release_date" value="<%= @product.release_date %>">
-  </div>
-  <input type="submit" name="Update Product">
 
-<% end %>
+</div>

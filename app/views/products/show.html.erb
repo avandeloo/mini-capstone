@@ -1,12 +1,13 @@
-<h2><%= @product.name %></h2>
-<h4><%= @product.price - 1 %>.99</h4>
-<div class="images" ><img src=<%= @product.image%>></div>
-<h3><%= @product.description %></h3>
-<h3><%= @product.release_date %></h3>
+<div class="well3">
+  <h2><%= @product.name %></h2>
+  <h4><label class = "price">Price:</label> <label class = "price"><%= @product.price %>.00</label></h4>
+  <h4>Tax: <%= @product.tax %></h4>
+  <h4>Total: <%= @product.total %></h4>
+  <div class="images" ><img src=<%= @product.image%> class = "img"></div>
+  <h3><%= @product.description %></h3>
+  <h3><%= @product.release_date %></h3>
 
-<a href="/products">Home</a>
-<div></div>
-<a class="btn btn-info" href="/products/<%= @product.id %>/edit">Edit Product</a>
-<%= form_tag "/products/#{@product.id}", method: :delete do %>
-  <input class="btn btn-danger" type="submit" value="delete product">
-<% end %>
+  <%= link_to "Home", "/products", class: "btn btn-primary" %>
+  <%= link_to "Edit Product", "/products/#{@product.id}/edit", class: "btn btn-info" %>
+  <%= link_to "Delete Product", "/products/#{@product.id}", class: "btn btn-danger", method: :delete %>
+</div>
