@@ -79,6 +79,10 @@ h1 {
 
 h2 {
   border: solid;
+  height: 50px; 
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 25px;
   background-color: black;
   color: limegreen;
   text-align: center;
@@ -100,6 +104,8 @@ h4 {
   color: limegreen;
   text-align: center;
   box-shadow: 4px 4px 12px limegreen;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 body {
@@ -115,7 +121,8 @@ body {
 
 .well{
   height: auto;
-  background-color: black;
+  background-image: url('gaming_border4.png');
+  background-size: 100% 100%;
   border-color: black;
 }
 
@@ -169,10 +176,6 @@ body {
   border-color: limegreen;
 }
 
-.regularPrice {
-  color: limegreen;
-}
-
-.discountPrice {
+.discount-price {
   color: red;
 }

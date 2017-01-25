@@ -1,16 +1,7 @@
 class Product < ApplicationRecord
-  def sale_message
-    message = "Discount Item!" if price < 2
-    message = "Everyday Value!!" if price > 2
-    message
+  def discounted?
+    price < 40
   end
-  
-  def item_discount
-    item_type = "regularPrice" if price > 2
-    item_type = "discountPrice" if price < 2
-    item_type
-  end
-
 
   def tax
     @tax = price * 0.09

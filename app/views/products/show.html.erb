@@ -1,9 +1,15 @@
 <div class="well3">
   <h2><%= @product.name %></h2>
-  <h4><label class= <%= @product.item_discount %>><%= @product.sale_message %></label></h4>
-  <h4><label class= <%= @product.item_discount %>>Price:</label> <label class= <%= @product.item_discount %>>$<%= @product.price %>.00</label></h4>
-  <h4>Tax: $<%= @product.tax %></h4>
-  <h4>Total: $<%= @product.total %></h4>
+  
+  <% if @product.discounted? %>
+    <p>Discounted Item!</p>
+  <% else %>
+    <p>Everyday Value!!</p>
+  <% end %>
+
+  <h4><label class= <%= "discount-price" if @product.discounted? %>>Price:</label> <label class= <%= "discount-price" if @product.discounted? %>><%= number_to_currency(@product.price) %></label></h4>
+  <h4>Tax: <%= number_to_currency(@product.tax) %></h4>
+  <h4>Total: <%= number_to_currency(@product.total) %></h4>
   <div class="images" ><img src=<%= @product.image%> class = "img"></div>
   <h3><%= @product.description %></h3>
   <h3><%= @product.release_date %></h3>
