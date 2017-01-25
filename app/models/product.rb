@@ -4,6 +4,13 @@ class Product < ApplicationRecord
     message = "Everyday Value!!" if price > 2
     message
   end
+  
+  def item_discount
+    item_type = "regularPrice" if price > 2
+    item_type = "discountPrice" if price < 2
+    item_type
+  end
+
 
   def tax
     @tax = price * 0.09

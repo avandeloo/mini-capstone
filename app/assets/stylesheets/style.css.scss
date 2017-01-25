@@ -102,10 +102,6 @@ h4 {
   box-shadow: 4px 4px 12px limegreen;
 }
 
-.price {
-  color: red;
-}
-
 body {
   background-image: url('footer_lodyas.png');
   font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia,serif;
@@ -129,6 +125,7 @@ body {
   height: 280px;
   background-color: black;
   border-color: black;
+  box-shadow: 4px 4px 12px limegreen;
 }
 
 .well3{
@@ -164,4 +161,18 @@ body {
   max-width: 100%;
   max-height: 100%;
   box-shadow: 4px 4px 12px limegreen;
+}
+
+.submitBtn {
+  background-color: black;
+  color: limegreen;
+  border-color: limegreen;
+}
+
+.regularPrice {
+  color: limegreen;
+}
+
+.discountPrice {
+  color: red;
 }
