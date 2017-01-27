@@ -2,6 +2,21 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+
+    sort_attribute = params[:sort]
+    sort_order = params[:sort_order]
+    search_attribute = params[:search]
+    discount_amount = params[:discount]
+    
+    if sort_attribute && sort_order
+      @products = @products.order(sort_attribute => sort_order)
+    elsif discount_amount
+      @products = @products.where("price < ?", discount_amount)
+    elsif search_attribute
+      @products = @products.where('name iLIKE ?', "%#{search_attribute.downcase}%")
+    end
+      
+
   end
 
   def new
@@ -23,7 +38,12 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    if params[:id] == "random"
+      product = Product.all.sample
+      redirect_to "/products/#{product.id}"
+    else
+      @product = Product.find(params[:id])
+    end
   end
 
   def edit
