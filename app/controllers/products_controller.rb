@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     elsif discount_amount
       @products = @products.where("price < ?", discount_amount)
     elsif search_attribute
-      @products = @products.where('name iLIKE ?', "%#{search_attribute.downcase}%")
+      @products = @products.where('name iLIKE ? OR description iLIKE ?', "%#{search_attribute.downcase}%", "%#{search_attribute.downcase}%")
     end
       
 
