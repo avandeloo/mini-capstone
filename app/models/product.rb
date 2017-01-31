@@ -1,15 +1,10 @@
 class Product < ApplicationRecord
+  belongs_to :supplier
+  has_many :images
+  
   def discounted?
     price < 40
   end
-
-  # def search(search)
-  #   if search
-  #     product.where('name LIKE ?', "%#{search}%")
-  #   else
-  #     product.find(:all)
-  #   end
-  # end
 
   def tax
     @tax = price * 0.09
@@ -19,5 +14,13 @@ class Product < ApplicationRecord
   def total
     total = price + @tax
     sprintf("%.2f", total.round(2))
+  end
+
+  def default_image
+    if images.count > 0
+      images.first.url
+    else
+      "https://www.ebuybit.com/product_img2/10000132.jpg"
+    end
   end
 end

@@ -10,10 +10,14 @@
   <h4><label class= <%= "discount-price" if @product.discounted? %>>Price:</label> <label class= <%= "discount-price" if @product.discounted? %>><%= number_to_currency(@product.price) %></label></h4>
   <h4>Tax: <%= number_to_currency(@product.tax) %></h4>
   <h4>Total: <%= number_to_currency(@product.total) %></h4>
-  <div class="images" ><img src=<%= @product.image%> class = "img"></div>
-  <h3><%= @product.description %></h3>
-  <h3><%= @product.release_date %></h3>
+  <% @product.images.each do |image| %>
+    <div class="images" ><img src=<%= image.url %> class = "img"></div>
+  <% end %>
+  <h3>Description: <%= @product.description %></h3>
+  <h3>Release Date: <%= @product.release_date %></h3>
+  <h3>Supplier: <%= @product.supplier.name %></h3>
 
+  <%= link_to "Add Image", "/products/#{@product.id}/images/new", class: "btn btn-warning" %>
   <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-info" %>
   <%= link_to "Delete", "/products/#{@product.id}", class: "btn btn-danger", method: :delete %>
 </div>

@@ -1,0 +1,8 @@
+<div class="well3">
+  <h2><%= @supplier.name %></h2>
+  <h3>Email: <%= @supplier.email %></h3>
+  <h3>Phone Number: <%= @supplier.phone %></h3>
+  
+  <%= link_to "Edit", "/suppliers/#{@supplier.id}/edit", class: "btn btn-info" %>
+  <%= link_to "Delete", "/suppliers/#{@supplier.id}", class: "btn btn-danger", method: :delete %>
+</div>

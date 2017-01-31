@@ -19,6 +19,11 @@
         <label class ="label">Release Date: </label><input type="text" name="release_date">
       </div>
       <p></p>
+      <div>
+        <label class = "label"><%= label_tag :supplier %>
+        <%= collection_select :supplier, :supplier_id, Supplier.all, :id, :name %></label>
+      </div>
+      <p></p>
       <input type="submit" name="Create New Product" class = "submitBtn">
     <% end %>
   </div>

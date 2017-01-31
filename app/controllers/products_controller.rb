@@ -5,17 +5,20 @@ class ProductsController < ApplicationController
 
     sort_attribute = params[:sort]
     sort_order = params[:sort_order]
-    search_attribute = params[:search]
     discount_amount = params[:discount]
+    search_term = params[:search_term]
+
+    if search_term
+      @products = @products.where("name iLIKE ? OR description iLIKE ?", 
+                                "%#{search_term}%",
+                                "%#{search_term}%")
+    end
     
     if sort_attribute && sort_order
       @products = @products.order(sort_attribute => sort_order)
     elsif discount_amount
       @products = @products.where("price < ?", discount_amount)
-    elsif search_attribute
-      @products = @products.where('name iLIKE ? OR description iLIKE ?', "%#{search_attribute.downcase}%", "%#{search_attribute.downcase}%")
     end
-      
 
   end
 
@@ -27,9 +30,9 @@ class ProductsController < ApplicationController
     product = Product.new(
                         name: params[:name],
                         price: params[:price],
-                        image: params[:image],
                         description: params[:description],
-                        release_date: params[:release_date]
+                        release_date: params[:release_date],
+                        supplier_id: params[:supplier][:supplier_id]
                         )
     product.save
 
@@ -58,6 +61,7 @@ class ProductsController < ApplicationController
     product.image = params[:image]
     product.description = params[:description]
     product.release_date = params[:release_date]
+    product.supplier_id = params[:supplier_id]
 
     product.save
 

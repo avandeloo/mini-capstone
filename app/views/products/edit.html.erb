@@ -10,14 +10,18 @@
       <div>
         <label class ="label">Price: </label><input type="integer" name="price" value="<%= @product.price %>">
       </div>
-      <div>
-        <label class ="label"> Image Link: </label><input type="text" name="image" value="<%= @product.image %>">
-      </div>
+<!--       <div>
+        <%= label_tag :images %>
+        <%= text_field_tag :images, @product.images %>
+      </div> -->
       <div>
         <label class ="label"> Description: </label><input type="text" name="description" value="<%= @product.description %>">
       </div>
       <div>
         <label class ="label">Release Date: </label><input type="text" name="release_date" value="<%= @product.release_date %>">
+      </div>
+      <div>
+        <label class ="label">Supplier Id: </label><input type="text" name="supplier_id" value="<%= @product.supplier_id %>">
       </div>
       <p></p>
       <input type="submit" name="Update Product" class = "submitBtn">

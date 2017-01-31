@@ -1,0 +1,19 @@
+<h1>New Supplier</h1>
+
+<div class="well2">
+  <div class="container">
+    <%= form_tag "/suppliers", method: :post do %>
+      <div>
+        <label class ="label">Name: </label><input type="text" name="name">
+      </div>
+      <div>
+        <label class ="label">Email: </label><input type="text" name="email">
+      </div>
+      <div>
+        <label class ="label">Phone Number: </label><input type="text" name="phone">
+      </div>
+      <p></p>
+      <input type="submit" name="Create New Supplier" class = "submitBtn">
+    <% end %>
+  </div>
+</div>
