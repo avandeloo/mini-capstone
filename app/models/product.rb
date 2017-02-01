@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :supplier
   has_many :images
+  belongs_to :user
   
   def discounted?
     price < 40
@@ -22,5 +23,9 @@ class Product < ApplicationRecord
     else
       "https://www.ebuybit.com/product_img2/10000132.jpg"
     end
+  end
+
+  def creator
+    user.name
   end
 end
