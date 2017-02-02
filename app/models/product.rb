@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   belongs_to :supplier
   has_many :images
   belongs_to :user
+  has_many :orders
   
   def discounted?
     price < 40

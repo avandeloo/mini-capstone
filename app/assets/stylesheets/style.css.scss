@@ -136,7 +136,7 @@ body {
 }
 
 .well3{
-  width: 400px;
+  width: auto;
   margin: auto;
   border-color: black;
 }
@@ -178,4 +178,8 @@ body {
 
 .discount-price {
   color: red;
+}
+
+.quantity {
+  color: limegreen;
 }

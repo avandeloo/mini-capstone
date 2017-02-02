@@ -4,14 +4,16 @@ Supplier.create!([
   {name: "Anne Marie", email: "annemarie@gmail.com", phone: "335 556-9972"}
 ])
 
+
+
 Product.create!([
-  {name: "Wolfenstein 3D", price: "25.0", description: "Wolfenstein 3D is a first-person shooter video game developed by id Software and published by Apogee Software and FormGen.", release_date: "05/05/92", in_stock: nil, supplier_id: 1},
-  {name: "Doom", price: "60.0", description: "Fight back the legions of hell in a first-person shooter.", release_date: "05/10/93", in_stock: nil, supplier_id: 1},
-  {name: "Serious Sam", price: "65.0", description: "Serious Sam is a first-person shooter video game, released in two episodes and the first in the Serious Sam series, developed by Croteam.", release_date: "03/21/01", in_stock: nil, supplier_id: 1},
-  {name: "Quake", price: "50.0", description: "Quake is a first-person shooter video game, developed by id Software and published by GT Interactive.", release_date: "06/22/96", in_stock: nil, supplier_id: 2},
-  {name: "God of War", price: "25.0", description: "God of War is an action-adventure video game series loosely based on Greek mythology, originally created by David Jaffe at Sony's Santa Monica Studio.", release_date: "03/22/05", in_stock: nil, supplier_id: 2},
-  {name: "Cheapo", price: "1.0", description: "Man talk about cheap...", release_date: "01/24/17", in_stock: nil, supplier_id: 3},
-  {name: "Duke Nukem 3D", price: "40.0", description: "Duke Nukem 3D is a first-person shooter video game developed by 3D Realms and published by GT Interactive Software.", release_date: "01/29/96", in_stock: nil, supplier_id: 3}
+  {name: "Wolfenstein 3D", price: "25.0", description: "Wolfenstein 3D is a first-person shooter video game developed by id Software and published by Apogee Software and FormGen.", release_date: "05/05/92", in_stock: nil, supplier_id: 1, user_id: 1},
+  {name: "Doom", price: "60.0", description: "Fight back the legions of hell in a first-person shooter.", release_date: "05/10/93", in_stock: nil, supplier_id: 1, user_id: 2},
+  {name: "Serious Sam", price: "65.0", description: "Serious Sam is a first-person shooter video game, released in two episodes and the first in the Serious Sam series, developed by Croteam.", release_date: "03/21/01", in_stock: nil, supplier_id: 1, user_id: 3},
+  {name: "Quake", price: "50.0", description: "Quake is a first-person shooter video game, developed by id Software and published by GT Interactive.", release_date: "06/22/96", in_stock: nil, supplier_id: 2, user_id: 1},
+  {name: "God of War", price: "25.0", description: "God of War is an action-adventure video game series loosely based on Greek mythology, originally created by David Jaffe at Sony's Santa Monica Studio.", release_date: "03/22/05", in_stock: nil, supplier_id: 2, user_id:2},
+  {name: "Cheapo", price: "1.0", description: "Man talk about cheap...", release_date: "01/24/17", in_stock: nil, supplier_id: 3, user_id:3},
+  {name: "Duke Nukem 3D", price: "40.0", description: "Duke Nukem 3D is a first-person shooter video game developed by 3D Realms and published by GT Interactive Software.", release_date: "01/29/96", in_stock: nil, supplier_id: 3, user_id: 1}
 ])
 
 Image.create!([
