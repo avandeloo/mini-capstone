@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
     sort_order = params[:sort_order]
     discount_amount = params[:discount]
     search_term = params[:search_term]
+    category_type = params[:category]
 
     if search_term
       @products = @products.where("name iLIKE ? OR description iLIKE ?", 
@@ -14,6 +15,11 @@ class ProductsController < ApplicationController
                                 "%#{search_term}%")
     end
     
+    if category_type
+      category = Category.find_by(name: category_type)
+      @products = category.products
+    end
+
     if sort_attribute && sort_order
       @products = @products.order(sort_attribute => sort_order)
     elsif discount_amount

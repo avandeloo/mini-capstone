@@ -14,6 +14,10 @@
     <div class="images" ><img src=<%= image.url %> class = "img"></div>
   <% end %>
   <h3>Description: <%= @product.description %></h3>
+  <h3>Category: </h3>
+  <% @product.categories.each do |category| %>
+        <h4><%= category.name %></h4>
+  <% end %>         
   <h3>Release Date: <%= @product.release_date %></h3>
   <h3>Created By: <%= @product.creator %></h3>
   <h3>Supplier: <%= @product.supplier.name %></h3>
