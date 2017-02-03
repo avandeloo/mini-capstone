@@ -6,11 +6,11 @@ class Order < ApplicationRecord
     self.subtotal = product.price * quantity
   end
 
-  def tax 
+  def calculate_tax 
     self.tax = subtotal * 0.09
   end
 
-  def total
+  def calculate_total
     self.total = subtotal + tax
   end
 

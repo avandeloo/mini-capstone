@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
 
     order.calculate_subtotal
     order.calculate_tax
-    order.total
+    order.calculate_total
 
     @order.save
 
