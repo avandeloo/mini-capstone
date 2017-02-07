@@ -59,12 +59,13 @@
                 <% Category.all.each do |category| %>
 
                 <li><a href="/products?category=<%= category.name %>"><%= category.name %></a></li>
-                <li role="separator" class="divider"
+                <li role="separator" class="divider"></li>
                 <% end %>
-                
+                <li><a href="/carted_products">View Cart</a></li>
                 <li role="separator" class="divider"></li>
                 <% if current_user %>
                   <li><a href="/logout">Log Out</a></li>
+                  <li role="separator" class="divider"></li>
                 <% else %>
                   <li><a href="/signup">Sign Up</a></li>
                   <li role="separator" class="divider"></li>

@@ -19,7 +19,6 @@
         <h4><%= category.name %></h4>
   <% end %>         
   <h3>Release Date: <%= @product.release_date %></h3>
-  <h3>Created By: <%= @product.creator %></h3>
   <h3>Supplier: <%= @product.supplier.name %></h3>
   <h4>Product Id: <%= @product.id %></h4>
 
@@ -27,17 +26,14 @@
   <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-info" %>
   <%= link_to "Delete", "/products/#{@product.id}", class: "btn btn-danger", method: :delete %>
   
-  <%= form_tag "/orders", method: :post do %>
+  <%= form_tag "/carted_products", method: :post do %>
     <div class="quantity">
       <%= label_tag :quantity %>
-      <%= text_field_tag :quantity %>
-    </div>
-    <div class="quantity">
-      <%= label_tag :product_id %>
+      <%= text_field_tag :quantity %>      
       <%= hidden_field_tag :product_id, @product.id %>
     </div>
     
-    <%= submit_tag "Buy Now", class: "btn btn-info"%>
+    <%= submit_tag "Add To Cart", class: "btn btn-info"%>
   <% end %>
 
 </div>
