@@ -1,7 +1,12 @@
 class CartedProductsController < ApplicationController
 
   def index
-    @carted_products = current_user.cart
+    if current_user && current_user.cart.any?
+      @carted_products = current_user.cart
+    else
+      flash[:warning] = "You have nothing in your shopping cart. Why not add some delightful merch?"
+      redirect_to "/"
+    end
     
   end
 
@@ -19,6 +24,14 @@ class CartedProductsController < ApplicationController
   end
 
   def new
+  end
+
+  def destroy
+    carted_product = CartedProduct.find(params[:id])
+    carted_product.update(status: 'removed')
+    flash[:success] = "Product Removed From Cart"
+    redirect_to '/carted_products'
+    
   end
 
 end

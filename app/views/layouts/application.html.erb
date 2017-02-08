@@ -61,7 +61,7 @@
                 <li><a href="/products?category=<%= category.name %>"><%= category.name %></a></li>
                 <li role="separator" class="divider"></li>
                 <% end %>
-                <li><a href="/carted_products">View Cart</a></li>
+                <li><%= link_to "<span class='glyphicon glyphicon-shopping-cart'></span> View Cart (#{@cart_count})".html_safe, "/carted_products", method: :get %></li>
                 <li role="separator" class="divider"></li>
                 <% if current_user %>
                   <li><a href="/logout">Log Out</a></li>
