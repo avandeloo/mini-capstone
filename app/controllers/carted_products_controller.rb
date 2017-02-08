@@ -1,5 +1,11 @@
 class CartedProductsController < ApplicationController
 
+  before_action :authenticate_user!
+
+  validates :quantity, presence: true
+  validates :quantity, numericality: { only_integer: true, greater_than: 0}
+  validates :status, presence: true
+
   def index
     if current_user && current_user.cart.any?
       @carted_products = current_user.cart

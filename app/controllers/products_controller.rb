@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+  before_action :authenticate_admin!, except: [:index, :show]
+
   def index
 
     @products = Product.all
@@ -30,21 +32,24 @@ class ProductsController < ApplicationController
   end
 
   def new
-    
+    @product = Product.new
   end
 
   def create
-    product = Product.new(
+
+    @product = Product.new(
                         name: params[:name],
                         price: params[:price],
                         description: params[:description],
                         release_date: params[:release_date],
                         supplier_id: params[:supplier][:supplier_id]
                         )
-    product.save
-
-    flash[:success] = "Product #{product.name} Created Successfully."
-    redirect_to "/products/#{product.id}"
+    if @product.save 
+      flash[:success] = "Product #{product.name} Created Successfully."
+      redirect_to "/products/#{product.id}"
+    else
+      render :new 
+    end
   end
 
   def show
@@ -56,11 +61,12 @@ class ProductsController < ApplicationController
     end
   end
 
-  def edit
+  def edit    
     @product = Product.find(params[:id])
   end
 
   def update
+
     product = Product.find(params[:id])
 
     product.name = params[:name]

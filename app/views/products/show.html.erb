@@ -22,19 +22,25 @@
   <h3>Supplier: <%= @product.supplier.name %></h3>
   <h4>Product Id: <%= @product.id %></h4>
 
-  <%= link_to "Add Image", "/products/#{@product.id}/images/new", class: "btn btn-warning" %>
-  <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-info" %>
-  <%= link_to "Delete", "/products/#{@product.id}", class: "btn btn-danger", method: :delete %>
+  <% if current_user && current_user.admin %>
+    <%= link_to "Add Image", "/products/#{@product.id}/images/new", class: "btn btn-warning" %>
+    <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-info" %>
+    <%= link_to "Delete", "/products/#{@product.id}", class: "btn btn-danger", method: :delete %>
+  <% end %>
   
-  <%= form_tag "/carted_products", method: :post do %>
-    <div class="quantity">
-      <%= label_tag :quantity %>
-      <%= text_field_tag :quantity %>      
-      <%= hidden_field_tag :product_id, @product.id %>
-    </div>
+  <% if current_user %>
+    <%= form_tag "/carted_products", method: :post do %>
     
+      <div class="quantity">
+        <%= label_tag :quantity %>
+        <%= text_field_tag :quantity %>      
+        <%= hidden_field_tag :product_id, @product.id %>
+      </div>
+      
     <%= submit_tag "Add To Cart", class: "btn btn-info"%>
-    
+    <% end %>
+  <% else %>
+    <h2>If you wish to purchase an item please <%= link_to "login", "/login"%></h2>
   <% end %>
 
 </div>

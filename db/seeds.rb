@@ -1,3 +1,9 @@
+User.create!([
+  {name: "Anne Johnson", email: "annejohnson@gmail.com", password: "password", password_confirmation: "password", admin: false},
+  {name: "Charlie Chaplin", email: "charliechaplin@gmail.com", password: "password", password_confirmation: "password", admin: false},
+  {name: "James John", email: "jamesjohn@gmail.com", password: "password", password_confirmation: "password", admin: true}
+])
+
 Supplier.create!([
   {name: "Joe Johnson", email: "joejohnson@gmail.com", phone: "234 445-8892"},
   {name: "Giovanni Gregorrio", email: "giovannigregorrio@gmail.com", phone: "532 223-6654"},
@@ -62,3 +68,4 @@ ProductCategory.create!([
   {product_id: 7, category_id: 4}
 
   ])
+
